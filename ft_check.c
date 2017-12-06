@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 21:05:23 by mosborne          #+#    #+#             */
-/*   Updated: 2017/11/30 19:25:14 by mosborne         ###   ########.fr       */
+/*   Updated: 2017/12/02 12:52:41 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ int		ft_checker(char *str, char piece)
 {
 	if (str[0] && str[0] == '#')
 	{
-		return (1 + ft_checker(str + 1, piece))
+		str[0] = piece;
+		return (1 + ft_checker(str - 1, piece) + ft_checker(str + 1, piece)
+		+ ft_checker(str + 5, piece));
 	}
-	return (1);
+	else
+		return (0);
 }
 
 int	ft_block(char *str)

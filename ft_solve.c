@@ -6,13 +6,13 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 01:34:47 by mosborne          #+#    #+#             */
-/*   Updated: 2017/11/14 01:44:35 by mosborne         ###   ########.fr       */
+/*   Updated: 2017/12/02 14:49:36 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int	ft_solver()
+int	ft_solver(char *grid, char **new, int size, int piece)
 {
-	
+    
 }

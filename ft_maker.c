@@ -6,27 +6,30 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 01:12:08 by mosborne          #+#    #+#             */
-/*   Updated: 2017/11/14 01:42:46 by mosborne         ###   ########.fr       */
+/*   Updated: 2017/12/06 14:37:24 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	ft_mapsize(int *piece)
+
+int		ft_mapsize(int piece)
 {
 	int i;
-	static int x = 0;
-	int mapsize;
-	char *array;
 
 	i = 1;
-	while (i * i < piece * 4)
+	while (i * i < piece * 4) // check to make sure their is atleast one piece
 		i++;
-	mapsize = i;
-	array = ft_strnew(mapsize * (mapsize + 1))
-	while (x < (mapsize * (mapsize + 1)))
+	return (i);
+}
+
+void	ft_builder(char *array, int size)
+{
+	static int x = 0;
+
+	while (x < (size * (size + 1)))
 	{
-		if (x % (mapsize + 1) == mapsize)
+		if (x % (size + 1) == size)
 			array[x] = '\n';
 		else
 			array[x] = '.';
@@ -40,4 +43,10 @@ char	*ft_piecefinder(char *str)
 	while (*str && (*str == '.' || *str == '\n'))
 		str++;
 	return (str);
+}
+
+void	ft_gridmaker(char *array, char **new, int size, int piece)
+{
+	ft_builder(array, size);
+	
 }

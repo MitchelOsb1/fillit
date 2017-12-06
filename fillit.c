@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 11:54:31 by mosborne          #+#    #+#             */
-/*   Updated: 2017/11/15 13:31:56 by mosborne         ###   ########.fr       */
+/*   Updated: 2017/12/06 13:58:40 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	main(int ac, char **av)
 	int size;
 	char *grid;
 	char **new;
+	char *array;
+	static int i = 0;
 
 	if (ac != 2)
 		return (1);
@@ -46,7 +48,13 @@ int	main(int ac, char **av)
 	{
 		grid = ft_opener(av[1]);
 		new = ft_splitter(grid, &piece);
-		printf("%s", *new);
+		size = ft_mapsize(piece);
+		array = ft_strnew(size * (size + 1));
+		while(new[i])
+		{
+			printf("%s", new[i]);
+			i++;
+		}
 	}
 	else
 	{
