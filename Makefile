@@ -10,27 +10,29 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME =
+NAME = fillit
 
-HEADER =
+HEADER = fillit.h
 
 FLAGS = -Wall -Wextra -Werror
 
-SRCS =
+SRCS = ft_check.c main.c ft_maker.c ft_solve.c ft_split.c main.c
 
-OBJS =
+LIB = libft/libft.a
 
 all: $(NAME)
 
-$(NAME): 
-	gcc $(FLAGS) -c $(SRCS) -I $(HEADER)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
-	
-clean:
-	rm -rf $(OBJS)
+$(LIB):
+	@make -C libft
 
-fclean: clean 
-	rm -rf $(NAME)
+$(NAME): $(LIB)
+	@gcc $(FLAGS) $(SRCS) $(LIB) -I $(HEADER) -o $(NAME)
+
+clean:
+	@make -C libft clean
+
+fclean: clean
+	@rm -rf $(NAME)
+	@make -C libft fclean
 
 re: fclean all

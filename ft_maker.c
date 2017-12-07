@@ -12,7 +12,6 @@
 
 #include "fillit.h"
 
-
 int		ft_mapsize(int piece)
 {
 	int i;
@@ -48,8 +47,13 @@ char	*ft_piecefinder(char *str)
 void	ft_gridmaker(char *array, char **new, int size, int piece)
 {
 	ft_builder(array, size);
-	while (ft_solvetet(array, new, size, piece))
+	while (ft_solvetet(array, new, size, piece) != 1)
 	{
-		
+		free(array);
+		size++;
+		array = ft_strnew(size * (size + 1));
+		ft_builder(array, size);
 	}
+	ft_putstr(array);
+	free(array);
 }
