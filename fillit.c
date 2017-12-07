@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 11:54:31 by mosborne          #+#    #+#             */
-/*   Updated: 2017/12/06 13:58:40 by mosborne         ###   ########.fr       */
+/*   Updated: 2017/12/06 15:48:03 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int	main(int ac, char **av)
 		new = ft_splitter(grid, &piece);
 		size = ft_mapsize(piece);
 		array = ft_strnew(size * (size + 1));
+		ft_gridmaker(array, new, size, piece);
 		while(new[i])
 		{
 			printf("%s", new[i]);

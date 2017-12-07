@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 01:12:08 by mosborne          #+#    #+#             */
-/*   Updated: 2017/12/06 14:37:24 by mosborne         ###   ########.fr       */
+/*   Updated: 2017/12/06 16:03:58 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,8 @@ char	*ft_piecefinder(char *str)
 void	ft_gridmaker(char *array, char **new, int size, int piece)
 {
 	ft_builder(array, size);
-	
+	while (ft_solvetet(array, new, size, piece))
+	{
+		
+	}
 }
