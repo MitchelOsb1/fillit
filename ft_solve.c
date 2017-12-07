@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 01:34:47 by mosborne          #+#    #+#             */
-/*   Updated: 2017/12/06 16:37:25 by mosborne         ###   ########.fr       */
+/*   Updated: 2017/12/06 18:02:06 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int     tet_poscheck(char *array, char *block, int size)
         array[0] = block[0];
         if (block[5])
         {
-            return (1 + tetposcheck(1 + array, 1 + block, size) + 
+            return (1 + tet_poscheck(1 + array, 1 + block, size) + 
                 tet_poscheck(array - 1, block - 1, size) +
             tet_poscheck(array + size + 1, block + 5, size));
         }
         else
-            
+            return ()
     }
 }
 
@@ -37,6 +37,6 @@ int     ft_solvetet(char *array, char **new, int size, int piece)
 {
     char *block;
 
-    block = ft_piecefinder(*array);
+    block = ft_piecefinder(*new);
     while ()
 }
