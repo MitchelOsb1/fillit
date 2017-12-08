@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/07 15:35:15 by mosborne          #+#    #+#             */
-/*   Updated: 2017/12/07 16:28:34 by mosborne         ###   ########.fr       */
+/*   Updated: 2017/12/07 16:46:06 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_mapsize(int piece)
 	int i;
 
 	i = 1;
-	while (i * i < piece * 4) // check to make sure their is atleast one piece
+	while (i * i < piece * 4)
 		i++;
 	return (i);
 }
@@ -57,7 +57,6 @@ char	ft_currentpiece(char *str)
 	}
 	return (0);
 }
-
 
 void	ft_gridmaker(char *array, char **new, int size, int piece)
 {

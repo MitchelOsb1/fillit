@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/07 15:34:49 by mosborne          #+#    #+#             */
-/*   Updated: 2017/12/07 16:24:55 by mosborne         ###   ########.fr       */
+/*   Updated: 2017/12/07 16:55:33 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,13 @@ int		ft_checker(char *str, char piece)
 		return (0);
 }
 
-int	ft_block(char *str)
+int		ft_block(char *str)
 {
-	int i;
-	static int a = 0;
-	static int x = 0;
-	static int lc = 0;
+	static int	i = 0;
+	static int	a = 0;
+	static int	x = 0;
+	static int	lc = 0;
 
-	i = 0;
 	while (str[i] == '.' || str[i] == '#' || str[i] == '\n')
 	{
 		if (str[i] == '#' || str[i] == '.')
