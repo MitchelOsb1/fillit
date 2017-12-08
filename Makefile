@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/10/18 11:50:03 by mosborne          #+#    #+#              #
-#    Updated: 2017/11/03 15:09:06 by mosborne         ###   ########.fr        #
+#    Created: 2017/12/07 15:34:36 by mosborne          #+#    #+#              #
+#    Updated: 2017/12/07 15:34:39 by mosborne         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ HEADER = fillit.h
 
 FLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_check.c main.c ft_maker.c ft_solve.c ft_split.c main.c
+SRCS = ft_check.c main.c ft_maker.c ft_solve.c ft_split.c
 
 LIB = libft/libft.a
 
@@ -26,7 +26,7 @@ $(LIB):
 	@make -C libft
 
 $(NAME): $(LIB)
-	@gcc $(FLAGS) $(SRCS) $(LIB) -I $(HEADER) -o $(NAME)
+	@gcc $(FLAGS) -g $(SRCS) $(LIB) -I $(HEADER) -o $(NAME)
 
 clean:
 	@make -C libft clean

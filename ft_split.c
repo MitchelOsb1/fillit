@@ -6,7 +6,7 @@
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 21:26:50 by mosborne          #+#    #+#             */
-/*   Updated: 2017/11/30 19:04:12 by mosborne         ###   ########.fr       */
+/*   Updated: 2017/12/07 16:30:31 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char	**ft_malloc(char *str, int *piece, char letter)
 		ft_strncpy(temp[*piece], oldstr, 21);
 		ft_success(temp[*piece], letter++);
 		*piece += 1;
+		if (oldstr[20] == '\0')
+			break ;
 		oldstr += 21;
 	}
 	temp[*piece] = NULL;
@@ -35,10 +37,9 @@ char	**ft_splitter(char *str, int *piece)
 {
 	char **newstr;
 
-	printf("%s", str);
 	if (!(ft_block(str)))
 	{
-		ft_putstr_fd("error1\n", 1);
+		ft_putstr("error\n");
 		exit(0);
 	}
 	newstr = ft_malloc(str, piece, 'A');

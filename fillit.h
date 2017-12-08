@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: -_- <-_-@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 11:51:05 by mosborne          #+#    #+#             */
-/*   Updated: 2017/12/07 11:02:22 by -_-              ###   ########.fr       */
+/*   Updated: 2017/12/07 14:13:33 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ int     ft_solvetet(char *array, char **new, int size, int piece);
 char	**ft_malloc(char *str, int *piece, char letter);
 char	**ft_splitter(char *str, int *piece);
 char	*ft_opener(char *av);
-void	ft_builder(char *array, int size);
 char	*ft_piecefinder(char *str);
+char	ft_currentpiece(char *str);
+void	ft_builder(char *array, int size);
 void	ft_gridmaker(char *array, char **new, int size, int piece);
 void    tet_posremove(char *array, char *block, int size);
 

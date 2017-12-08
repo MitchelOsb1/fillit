@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mosborne <mosborne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/14 01:34:47 by mosborne          #+#    #+#             */
-/*   Updated: 2017/12/06 18:02:06 by mosborne         ###   ########.fr       */
+/*   Created: 2017/12/07 15:35:06 by mosborne          #+#    #+#             */
+/*   Updated: 2017/12/07 15:35:08 by mosborne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int   tet_poscheck(char *array, char *block, int size)
 {
-    if (block[0] && array[0] == '.')
+    if (block[0] && array[0] == '.' && block[0] > 64)
     {
         array[0] = block[0];
         if (block[5])
@@ -51,20 +51,23 @@ int     ft_solvetet(char *array, char **new, int size, int piece)
     char *block;
 
     i = -1;
+    if (new[0] == '\0')
+        return (1);
     block = ft_piecefinder(*new);
     while (array[++i])
     {
       check = tet_poscheck(&array[i], block, size); // always 4 if valid tetromino
       if (check != 4)
         tet_posremove(&array[i], block, size);
-      if (check == 4)
+      else
       {
+        if (piece == ft_currentpiece(&array[0]) - 64)
+            return (1);
         if (!ft_solvetet(array, &new[1], size, piece))
-          tet_posremove(&array[i], block, size);
+            tet_posremove(&array[i], block, size);
         else
           return (1);
       }
-      i++;
     }
     return (0);
 }
